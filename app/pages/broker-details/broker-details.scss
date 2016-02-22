@@ -1,0 +1,36 @@
+.broker {
+
+  ion-card {
+
+    margin-top: 100px;
+    overflow: visible;
+
+    ion-card-content {
+
+      background-color: map-get($colors, primary);
+      color: #FFFFFF;
+      text-align: center;
+
+      img {
+        height: 160px;
+        width: 160px;
+        border-radius: 50%;
+        margin-top: -100px;
+        border: solid 4px #FFFFFF;
+        display: inline;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-top: .5rem;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+      }
+
+    }
+
+  }
+
+}
