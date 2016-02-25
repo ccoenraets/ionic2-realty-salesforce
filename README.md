@@ -1,4 +1,4 @@
-## IonicRealty: Ionic 2 Sample App with REST services
+## IonicRealty
 
 Sample application demonstrating how to build Customer-Facing Apps with Angular 2, Ionic 2, and Salesforce.
 
