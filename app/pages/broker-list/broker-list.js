@@ -1,5 +1,5 @@
 import {OnInit} from 'angular2/core';
-import {Page, NavController} from 'ionic/ionic';
+import {Page, NavController} from 'ionic-framework/ionic';
 import {BrokerDetailsPage} from '../broker-details/broker-details';
 import {BrokerService} from '../../services/broker-service';
 

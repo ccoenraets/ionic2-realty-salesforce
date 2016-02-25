@@ -1,3 +1,4 @@
+
 // http://ionicframework.com/docs/v2/theming/
 
 
@@ -7,6 +8,14 @@
 // By default each design mode includes these shared imports.
 // App Shared Sass variables belong in app.variables.scss.
 
+
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../fonts/roboto-light.ttf");
+}
+
 @import "../pages/property-details/property-details";
 
 @import "../pages/broker-details/broker-details";
+
+@import "../pages/welcome/welcome";

@@ -1,5 +1,5 @@
 <ion-navbar *navbar>
-    <button menuToggle *ngIf="!broker">
+    <button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Broker</ion-title>
@@ -10,7 +10,7 @@
         <ion-card>
             <ion-card-content>
                 <img src="{{broker.picture}}"/>
-                <h2>{{broker.firstName}} {{broker.lastName}}</h2>
+                <h2>{{broker.name}}</h2>
                 <h3>{{broker.title}}</h3>
             </ion-card-content>
 

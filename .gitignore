@@ -1,0 +1,15 @@
+hooks/
+node_modules/
+platforms
+plugins/
+resources/
+www/build/
+*.swp
+.DS_Store
+Thumbs.db
+config.xml
+ionic.config.js
+package.json
+tsconfig.json
+webpack.config.jst a
+

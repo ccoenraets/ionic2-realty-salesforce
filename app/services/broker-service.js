@@ -8,8 +8,7 @@ import * as force from './../force';
 let prettifyBroker = (broker) => {
     return {
         id: broker.Id,
-        firstName: broker.First_Name__c,
-        lastName: broker.Last_Name__c,
+        name: broker.Name,
         title: broker.Title__c,
         picture: broker.Picture__c,
         phone: broker.Phone__c,
@@ -23,12 +22,11 @@ export class BrokerService {
 
     findAll() {
         return force.query(`SELECT id,
-                                   first_name__c,
-                                   last_name__c,
+                                   name,
                                    title__c,
                                    picture__c
                             FROM broker__c
-                            ORDER BY last_name__c, first_name__c
+                            ORDER BY name
                             LIMIT 50`)
                 .then(response => response.records.map(prettifyBroker));
     }
@@ -36,8 +34,7 @@ export class BrokerService {
     findById(id) {
         return force.retrieve('Broker__c', id,
                                 `Id,
-                                First_Name__c,
-                                Last_Name__c,
+                                Name,
                                 Title__c,
                                 Picture__c,
                                 Phone__c,

@@ -1,5 +1,5 @@
 <ion-navbar *navbar>
-    <button menuToggle *ngIf="!property">
+    <button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Property</ion-title>
@@ -24,20 +24,20 @@
                     <ion-note item-right>{{property.beds}}</ion-note>
                 </ion-item>
                 <ion-item>
-                    <ion-icon item-left name="woman"></ion-icon>
+                    <ion-icon item-left name="analytics"></ion-icon>
                     <h3>Bathrooms</h3>
                     <ion-note item-right>{{property.baths}}</ion-note>
                 </ion-item>
                 <ion-item>
                     <ion-icon item-left name="pricetag"></ion-icon>
                     <h3>Asking Price</h3>
-                    <ion-note item-right>{{property.price}}</ion-note>
+                    <ion-note item-right>{{property.priceFormatted}}</ion-note>
                 </ion-item>
                 <button ion-item (click)="showBroker($event, property.broker)">
                     <ion-avatar item-left>
                         <img src="{{property.broker.picture}}"/>
                     </ion-avatar>
-                    <h2>{{property.broker.firstName}} {{property.broker.lastName}}</h2>
+                    <h2>{{property.broker.name}}</h2>
                     <p>{{property.broker.title}}</p>
                 </button>
             </ion-list>

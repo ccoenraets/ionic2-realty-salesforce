@@ -13,7 +13,7 @@
                     <img src="{{favorite.property.thumbnail}}"/>
                 </ion-thumbnail>
                 <h2>{{favorite.property.title}}</h2>
-                <p>{{favorite.property.city}}, {{favorite.property.state}} ∙ {{favorite.property.price}}</p>
+                <p>{{favorite.property.city}}, {{favorite.property.state}} ∙ {{favorite.property.priceFormatted}}</p>
             </button>
             <ion-item-options>
                 <button danger (click)="deleteItem($event, favorite)">Delete</button>

@@ -12,6 +12,7 @@ let prettifyProperty = (property) => {
         city: property.City__c,
         state: property.State__c,
         price: property.Price__c,
+        priceFormatted: "$" + property.Price__c.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
         beds: property.Beds__c,
         baths: property.Baths__c,
         description: property.Description__c,
@@ -21,8 +22,8 @@ let prettifyProperty = (property) => {
     };
     prettyProperty.broker = property.Broker__r ?
         {
-            firstName: property.Broker__r.First_Name__c,
-            lastName: property.Broker__r.Last_Name__c,
+            id: property.Broker__r.Id,
+            name: property.Broker__r.Name,
             title: property.Broker__r.Title__c,
             picture: property.Broker__r.Picture__c
         } : {};
@@ -61,8 +62,8 @@ export class PropertyService {
                                 picture__c,
                                 beds__c,baths__c,
                                 description__c,
-                                broker__r.First_Name__c,
-                                broker__r.Last_Name__c,
+                                broker__r.Id,
+                                broker__r.Name,
                                 broker__r.Title__c,
                                 broker__r.Picture__c`)
             .then(prettifyProperty);

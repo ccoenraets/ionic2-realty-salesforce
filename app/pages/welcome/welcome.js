@@ -1,4 +1,4 @@
-import {Page, NavController, NavParams} from 'ionic/ionic';
+import {Page, NavController, NavParams} from 'ionic-framework/ionic';
 
 @Page({
     templateUrl: 'build/pages/welcome/welcome.html'

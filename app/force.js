@@ -248,6 +248,7 @@ export let loginWithPlugin = () => new Promise((resolve, reject) => {
                     instanceURL: creds.instanceUrl,
                     refreshToken: creds.refreshToken
                 });
+                oauth.user_id = creds.userId;
                 resolve();
             },
             function (error) {
@@ -277,6 +278,7 @@ export let loginWithBrowser = () => new Promise((resolve, reject) => {
             queryString = url.substr(url.indexOf('#') + 1);
             obj = parseQueryString(queryString);
             oauth = obj;
+            oauth.user_id = oauth.id.split('/').pop();
             tokenStore.forceOAuth = JSON.stringify(oauth);
             resolve();
         } else if (url.indexOf("error=") > 0) {
@@ -297,7 +299,7 @@ export let loginWithBrowser = () => new Promise((resolve, reject) => {
  * Gets the user's ID (if logged in)
  * @returns {string} | undefined
  */
-export let getUserId = () => (typeof(oauth) !== 'undefined') ? oauth.id.split('/').pop() : undefined;
+export let getUserId = () => oauth.user_id;
 
 /**
  * Get the OAuth data returned by the Salesforce login process
@@ -319,8 +321,6 @@ export let isAuthenticated = () => (oauth && oauth.access_token) ? true : false;
  *  data:  JSON object to send in the request body - Optional
  */
 export let request = obj => new Promise((resolve, reject) => {
-
-    console.log(oauth);
 
     if (!oauth || (!oauth.access_token && !oauth.refresh_token)) {
         reject('No access token. Please login and try again.');
