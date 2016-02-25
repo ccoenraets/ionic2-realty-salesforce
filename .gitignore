@@ -11,5 +11,6 @@ config.xml
 ionic.config.js
 package.json
 tsconfig.json
-webpack.config.jst a
+webpack.config.js
+.idea
 
