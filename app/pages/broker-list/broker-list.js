@@ -8,7 +8,11 @@ import {BrokerService} from '../../services/broker-service';
 })
 export class BrokerListPage {
 
-    constructor(nav:NavController, brokerService:BrokerService) {
+    static get parameters() {
+        return [[NavController], [BrokerService]];
+    }
+
+    constructor(nav, brokerService) {
         this.nav = nav;
         this.brokerService = brokerService;
     }

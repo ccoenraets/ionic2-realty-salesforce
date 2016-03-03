@@ -5,7 +5,11 @@ import {Page, NavController, NavParams} from 'ionic-framework/ionic';
 })
 export class WelcomePage {
 
-    constructor(nav:NavController, navParams:NavParams) {
+    static get parameters() {
+        return [[NavController], [NavParams]];
+    }
+
+    constructor(nav, navParams) {
         this.nav = nav;
     }
 

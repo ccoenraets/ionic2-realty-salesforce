@@ -5,8 +5,6 @@
  */
 "use strict";
 
-//let window:any = this.window;
-
 let // The login URL for the OAuth process
     // To override default, pass loginURL in init(props)
     loginURL = 'https://login.salesforce.com',
@@ -24,7 +22,7 @@ let // The login URL for the OAuth process
     oauth,
 
 // By default we store fbtoken in sessionStorage. This can be overridden in init()
-    tokenStore:any = {},
+    tokenStore = {},
 
 // if page URL is http://localhost:3000/myapp/index.html, context is /myapp
     context = window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/")),
@@ -268,7 +266,7 @@ export let loginWithBrowser = () => new Promise((resolve, reject) => {
 
     document.addEventListener("oauthCallback", (evt) => {
 
-        let event:any = evt;
+        let event = evt;
         // Parse the OAuth data received from Salesforce
         let url = event.detail,
             queryString,

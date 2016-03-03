@@ -9,14 +9,16 @@ import * as force from './force';
 
 @App({
     templateUrl: 'build/app.html',
-    config: {
-
-    },
+    config: {},
     providers: [PropertyService, BrokerService]
 })
 class MyApp {
 
-    constructor(app:IonicApp, platform:Platform) {
+    static get parameters() {
+        return [[IonicApp], [Platform]];
+    }
+
+    constructor(app, platform) {
 
         this.app = app;
         this.platform = platform;

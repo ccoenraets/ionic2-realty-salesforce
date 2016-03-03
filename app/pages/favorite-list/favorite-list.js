@@ -8,7 +8,11 @@ import {PropertyService} from '../../services/property-service';
 })
 export class FavoriteListPage {
 
-    constructor(nav:NavController, propertyService:PropertyService) {
+    static get parameters() {
+        return [[NavController], [PropertyService]];
+    }
+
+    constructor(nav, propertyService) {
         this.nav = nav;
         this.propertyService = propertyService;
     }
